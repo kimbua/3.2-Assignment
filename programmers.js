@@ -43,7 +43,7 @@ const programmers = [
 
   function question2() {
     for (let index = 0; index <programmers.length; index++) {
-        const lastname = programmers[index].split(" ")[1];
+        const lastname = programmers[index].split(" ")[programmers[index].split(" ").length-1];
         console.log({lastname})
         
     }
@@ -72,15 +72,24 @@ const programmers = [
         console.log({lastnameChar})
     }
   }
- //sort
-  function sortQ1() {
+//sort
+function sortQ1() {
     programmers.sort()
     console.log(programmers) 
-  }
-function sortQ2() {
-
-    programmers.sort((a,b)=>a.split(" ")[1] -b.split(" ")[1]) 
-
-    console.log(programmers) 
 }
-sortQ2()
+function sortQ2() {
+    programmers.sort((a,b)=>a.split(" ")[a.split(" ").length-1].split("")[0] > b.split(" ")[b.split(" ").length-1].split("")[0] ? 1 : -1)
+
+    console.log(programmers[0].split(" ")[programmers[0].split(" ").length-1].split("")[0])
+    console.log({programmers}) 
+}
+
+function sortQ3() {
+    programmers.sort((a,b)=>a.split(" ")[0].length -  b.split(" ")[0].length)
+    console.log({programmers}) 
+}
+
+function sortQ4() {
+    programmers.sort((a,b)=>b.split(" ")[0].length -  a.split(" ")[0].length)
+    console.log({programmers}) 
+}
